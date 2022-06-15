@@ -1,33 +1,63 @@
+import { useState } from "react"
+import { GiphynderGrid } from "./components/GiphynderGrid"
+import { GiphynderInput } from "./components/GiphynderInput"
+
 export const GiphynderApp = () => {
-  return (
-    <div className="
-        bg-slate-900
-        w-full
-        h-screen
-        text-white
-        text-center
-    ">
-        
+
+    const [gifsHistory, setGifsHistory] = useState([]);
+    const [category, setCategory] = useState('');
+
+
+    const gifInputValue = (value) => {
+        setGifsHistory( [value, ...gifsHistory] );
+        setCategory(value);
+    }
+
+
+    return (
         <div className="
-            container
-            w-10/12
-            mx-auto
+            w-full
+            h-screen
+            text-center
         ">
-
-            <h1 className="
-                text-4xl
-                font-bold
-                py-9
+            
+            <div className="
+                container
+                w-10/12
+                mx-auto
             ">
-                Giphynder.jsx
-            </h1>
 
-            {/* Input */}
+                <h1 className="
+                    text-4xl
+                    font-bold
+                    py-10
+                ">
+                    Giphynder.jsx
+                </h1>
 
-            {/* List grid gifs */}
+                {/* Input */}
+                <GiphynderInput 
+                    onNewInputValue={ gifInputValue }
+                />
+
+                {/* History gifs */}
+                {/* TODO: Hacer condicional el historial */}
+                <div className="
+                    flex
+                    space-x-3
+                    text-gray-500
+                    my-8
+                ">
+                    {
+                        gifsHistory.map( (gif) => <p key={gif}>{gif}</p> )
+                    }
+                </div>
+
+                {/* List grid gifs */}
+                <GiphynderGrid category={ category } />
+
+            </div>
 
         </div>
-
-    </div>
-  )
+    )
 }
