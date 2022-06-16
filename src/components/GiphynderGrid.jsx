@@ -7,7 +7,7 @@ export const GiphynderGrid = ({category}) => {
 	
 	return (
 		<div className="
-			my-16
+			mt-20
 		">
 			<h2
 				className="

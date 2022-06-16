@@ -10,6 +10,9 @@ export const GiphynderInput = ({ onNewInputValue }) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+
+		if (inputValue.length <= 0) return;
+
 		onNewInputValue( inputValue );
 		setInputValue('');
 	}
@@ -42,6 +45,7 @@ export const GiphynderInput = ({ onNewInputValue }) => {
 					text-white
 					p-2
 					rounded-md
+					hover:bg-blue-800
 				"
 			>
 				Buscar

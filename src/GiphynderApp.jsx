@@ -17,7 +17,7 @@ export const GiphynderApp = () => {
         
             <div className="
                 w-full
-                h-screen
+                min-h-screen
                 text-center
             ">
 
@@ -53,8 +53,8 @@ export const GiphynderApp = () => {
                         gifsCategories.map((category) => <GiphynderGrid key={category} category={category} /> )
                     }
                 </div>
-                <GiphynderFooter />
             </div>
+            <GiphynderFooter />
         </>
     )
 }
