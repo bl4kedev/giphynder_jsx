@@ -29,15 +29,16 @@ export const GiphynderInput = ({ onNewInputValue }) => {
 				placeholder="Buscar GIF"
 				value={ inputValue }
 				className="
-					p-2
+					p-1
 					mr-2
 					border-2
+					w-9/12
 				"
 			/>
 			<button
 				type="onSubmit"
 				className="
-					bg-blue-800
+					bg-blue-700
 					text-white
 					p-2
 					rounded-md

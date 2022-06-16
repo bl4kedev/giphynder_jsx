@@ -1,63 +1,60 @@
 import { useState } from "react"
-import { GiphynderGrid } from "./components/GiphynderGrid"
 import { GiphynderInput } from "./components/GiphynderInput"
+import { GiphynderGrid } from "./components/GiphynderGrid"
+import { GiphynderFooter } from "./components/GiphynderFooter";
 
 export const GiphynderApp = () => {
 
-    const [gifsHistory, setGifsHistory] = useState([]);
-    const [category, setCategory] = useState('');
-
+    const [gifsCategories, setGifsCategories] = useState([]);
 
     const gifInputValue = (value) => {
-        setGifsHistory( [value, ...gifsHistory] );
-        setCategory(value);
+        setGifsCategories( [value, ...gifsCategories] );
     }
 
 
     return (
-        <div className="
-            w-full
-            h-screen
-            text-center
-        ">
-            
+        <>
+        
             <div className="
-                container
-                w-10/12
-                mx-auto
+                w-full
+                h-screen
+                text-center
             ">
 
-                <h1 className="
-                    text-4xl
-                    font-bold
-                    py-10
-                ">
-                    Giphynder.jsx
-                </h1>
-
-                {/* Input */}
-                <GiphynderInput 
-                    onNewInputValue={ gifInputValue }
-                />
-
-                {/* History gifs */}
-                {/* TODO: Hacer condicional el historial */}
                 <div className="
-                    flex
-                    space-x-3
-                    text-gray-500
-                    my-8
+                    bg-blue-900
+                    w-full
+                    h-48
+                    absolute
+                    -z-10
+                    rounded-b-3xl
+                "></div>
+
+                <div className="
+                    container
+                    w-11/12
+                    mx-auto
                 ">
+
+                    <h1 className="
+                        text-4xl
+                        font-bold
+                        py-10
+                        text-white
+                    ">
+                        Giphynder.jsx
+                    </h1>
+
+                    <GiphynderInput 
+                        onNewInputValue={ gifInputValue }
+                    />
+
                     {
-                        gifsHistory.map( (gif) => <p key={gif}>{gif}</p> )
+                        gifsCategories.map((category) => <GiphynderGrid key={category} category={category} /> )
                     }
                 </div>
-
-                {/* List grid gifs */}
-                <GiphynderGrid category={ category } />
-
+                <GiphynderFooter />
             </div>
-
-        </div>
+        </>
     )
 }
