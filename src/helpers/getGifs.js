@@ -3,8 +3,8 @@ export const getGifs = async (category) => {
     const { data } = await resp.json();
     const gifs = data.map( (gif) => ({
         id: gif.id,
-        title: gif.title,
-        url: gif.images.downsized_medium.url
+        title: gif.title || 'Sin titulo..',
+        url: gif.images['fixed_height'].url
     }));
 
     return gifs;

@@ -11,11 +11,15 @@ export const GiphynderItem = ({ id, title, url }) => {
             overflow-hidden
             bg-white
             rounded-xl
+            shadow-slate-300
             shadow-xl
             mb-10
+            max-w-xs
+            place-self-center
         ">
             <img className="
                 w-full
+                max-h-52
             "
                 src={url}
                 alt={title} />
