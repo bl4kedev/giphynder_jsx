@@ -36,6 +36,9 @@ export const GiphynderInput = ({ onNewInputValue }) => {
 					mr-2
 					border-2
 					w-9/12
+					max-w-md
+					tablet:border-blue-600
+					tablet:p-2
 				"
 			/>
 			<button
@@ -46,6 +49,7 @@ export const GiphynderInput = ({ onNewInputValue }) => {
 					p-2
 					rounded-md
 					hover:bg-blue-800
+					tablet:text-xl
 				"
 			>
 				Buscar

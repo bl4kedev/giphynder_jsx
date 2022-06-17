@@ -28,6 +28,7 @@ export const GiphynderApp = () => {
                     absolute
                     -z-10
                     rounded-b-3xl
+                    tablet:hidden
                 "></div>
 
                 <div className="
@@ -41,6 +42,7 @@ export const GiphynderApp = () => {
                         font-bold
                         py-10
                         text-white
+                        tablet:text-blue-800
                     ">
                         Giphynder.jsx
                     </h1>
